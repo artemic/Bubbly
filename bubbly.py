@@ -66,8 +66,6 @@ sizez=cube.shape[0]
 #create the header for the output fits
 hdr_map=header_create(cube_hdr,in_par_list)
 
-#indexz=numpy.arange(0.,float(sizez),1)
-
 #Determine the vector of velocities corresponding to the spectra
 vel,v_res=vel_profile(cube_hdr,z_index,sizez,in_par)
 
