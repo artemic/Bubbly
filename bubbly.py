@@ -206,7 +206,7 @@ veloff_abs=abs(veloff)
 bub=[]
 for m1 in range(map_number-1):#we look for matches to the conditions for expansion presence
   for m2 in range(m1+1,map_number):
-    bub_m=numpy.where((abs(veloff_abs[m1,:,:]-veloff_abs[m2,:,:]) < in_par['BUB_V_SIGMA']*v_res) & (veloff_abs[m1,:,:]-veloff_abs[m2,:,:] != 0.) & (veloff_abs[m1,:,:]!=0.) & (veloff_abs[m2,:,:]!=0.) & ((veloff[m1,:,:]<0) !=(veloff[m2,:,:]<0)) & (veloff_abs[m1,:,:]!=abs(main_v)) & (veloff_abs[m2,:,:]!=abs(main_v)))# & (abs(peaksi[:,:,m1+2]-peaksi[:,:,m2+2]) < 10.) & (abs(peaksd[:,:,m1+2]-peaksd[:,:,m2+2]) < 10.))
+    bub_m=numpy.where((abs(veloff_abs[m1,:,:]-veloff_abs[m2,:,:]) < in_par['BUB_V_SIGMA']*v_res) & (veloff_abs[m1,:,:]-veloff_abs[m2,:,:] != 0.) & (veloff_abs[m1,:,:]!=0.) & (veloff_abs[m2,:,:]!=0.) & ((veloff[m1,:,:]<0) !=(veloff[m2,:,:]<0)) & (veloff_abs[m1,:,:]!=abs(main_v)) & (veloff_abs[m2,:,:]!=abs(main_v)))
     bub_m=[(bub_m[0][i1],bub_m[1][i1],m1,m2) for i1 in range(len(bub_m[0]))]
     bub.extend(bub_m)
 
