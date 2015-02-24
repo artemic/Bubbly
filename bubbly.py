@@ -248,10 +248,10 @@ for coord in bub:
   voff=0.5*veloff_abs[m1,i,j]+0.5*veloff_abs[m2,i,j]
   b_disp=0.5*disp_map[m1,i,j]+0.5*disp_map[m2,i,j]
   if in_par['INT_TYPE']==0:
-    irel=(mono_map[m1+1,i,j]+mono_map[m2+1,i,j])/(2.*main_i[i,j])
+    irel=(mono_map[m1,i,j]+mono_map[m2,i,j])/(2.*main_i[i,j])
   elif in_par['INT_TYPE']==1:
-    irel=(mono_map[m1+1,i,j]+mono_map[m2+1,i,j])/2.
-    irel=(pi**0.5)*(irel*in_par['CALIB_A']*in_par['CALIB_C']+in_par['CALIB_B']*in_par['CALIB_C']*disp_map[m2+1,i,j])
+    irel=(mono_map[m1,i,j]+mono_map[m2,i,j])/2.
+    irel=(pi**0.5)*(irel*in_par['CALIB_A']*in_par['CALIB_C']+in_par['CALIB_B']*in_par['CALIB_C']*disp_map[m2,i,j])
     
   if numpy.isnan(bubble_map[i,j]):#we check whether there is already a detection at that point and add additional maps if necessary
     bubble_map[i,j]=voff
